@@ -9,6 +9,7 @@ pkgs.mkShellNoCC {
       git 
   ];
  shellHook = /* bash */''
+    export PROJECT_ROOT=${toString ./.}
     alias gs="git status"
     alias gc="git add -A; git commit -m"
     alias todo="vim TODO.md"
