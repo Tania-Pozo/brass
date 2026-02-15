@@ -9,5 +9,7 @@
 ```
 [ ] IR optimization `Option<NonZeroNum> == @num` (Because `Option::None` would be eq to `@num::ZERO`)
 [ ] Testing
+[ ] Generics
+[ ] 
 
 

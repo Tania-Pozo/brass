@@ -1,6 +1,7 @@
-mod product;
-mod sum;
-mod block;
+pub mod product;
+pub mod sum;
+pub mod block;
+pub mod fndef;
 
 pub struct Code {
     pub defs: Vec<Definition>
@@ -8,7 +9,7 @@ pub struct Code {
 
 pub enum Definition {
     TypeDef((TypeDef)),
-    FnDef(),
+    FnDef(fndef::FnDef),
     Inclusion(),
     External()
 }

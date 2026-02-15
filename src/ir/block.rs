@@ -38,6 +38,7 @@ pub enum Expr {
     Operation(Box<(Expr, String, Expr)>),
     FnApp(Box<Expr>, ArgsApp),
     Reference{expr: Box<Expr>, mutable: bool},
-    Dereference{expr: Box<Expr>, mutable: bool}
-
+    Dereference{expr: Box<Expr>, mutable: bool},
+    Expansion(Vec<String>),
+    FieldAccess(Box<Expr>, String)
 }
