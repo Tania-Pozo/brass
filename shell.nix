@@ -6,10 +6,13 @@ in
 pkgs.mkShellNoCC {
   packages = with pkgs; [
       cargo
-      git     
+      git 
   ];
- shellHook = ''
+ shellHook = /* bash */''
     alias gs="git status"
     alias gc="git add -A; git commit -m"
+    alias todo="vim TODO.md"
+    alias readme="vim README.md"
+    alias src="vim src"
   '';
 }
