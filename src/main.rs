@@ -1,5 +1,0 @@
-mod ir;
-
-fn main() {
-
-}

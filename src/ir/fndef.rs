@@ -1,6 +1,7 @@
+use crate::s;
 
-pub struct FnDef {
+s! (FnDef {
     name: String,
     args: super::block::ArgsDef,
     block: super::block::Block,
-}
+});

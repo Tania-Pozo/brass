@@ -1,10 +1,12 @@
 
-pub struct Sum {
+use crate::s;
+
+s!( Sum {
     name: String,
     variants: Vec<Variant>
-}
+});
 
-pub struct Variant {
+s! (Variant {
     name: String,
     raw_val: Option<super::Value>,
-}
+});

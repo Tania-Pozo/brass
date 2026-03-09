@@ -5,15 +5,14 @@ in
 
 pkgs.mkShellNoCC {
   packages = with pkgs; [
-      cargo
-      git 
+      /* cargo git vim */
   ];
  shellHook = /* bash */''
     export PROJECT_ROOT=${toString ./.}
     alias gs="git status"
     alias gc="git add -A; git commit -m"
-    alias todo="vim TODO.md"
-    alias readme="vim README.md"
-    alias src="vim src"
+    alias todo="vim $PROJECT_ROOT/TODO.md"
+    alias readme="vim $PROJECT_ROOT/README.md"
+    alias src="vim $PROJECT_ROOT/src"
   '';
 }

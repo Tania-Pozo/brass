@@ -1,13 +1,13 @@
 use std::collections::HashMap;
+use crate::{s, e};
+
+s!(Product {
+    name: String,
+    fields: ProductFields,
+});
 
 
-pub struct Product {
-    pub name: String,
-    pub fields: ProductFields,
-}
-
-
-pub enum ProductFields {
+e! (ProductFields {
     Tuple(Vec<super::Typ>),
     Named(HashMap<String, super::Typ>)
-}
+});

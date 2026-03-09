@@ -1,9 +1,12 @@
-pub struct ArgsDef(Vec<(String, super::Typ)>);
-pub struct ArgsApp(Vec<Expr>);
+use crate::e;
+use crate::s;
 
-pub struct Block(Vec<Statement>);
+s! (ArgsDef {args: Vec<(String, super::Typ)>});
+s! (ArgsApp{args: Vec<Expr>});
 
-pub enum Statement {
+s! (Block{block: Vec<Statement>});
+
+e! ( Statement {
     Return(Expr),
     FnApp(String, ArgsApp),
     LetBinding {
@@ -24,16 +27,16 @@ pub enum Statement {
     Break,
     Continue,
 
-}
+});
 
-pub struct IfStmt(Expr, Block, Option<Box<ElseStmt>>);
+s! (IfStmt{if_expr: Expr, block: Block, else_stmt: Option<Box<ElseStmt>>});
 
-enum ElseStmt {
+e! (ElseStmt {
     Unconditional(Block),
     Conditional(IfStmt)
-}
+});
 
-pub enum Expr {
+e! (Expr {
     Variable(String),
     Operation(Box<(Expr, String, Expr)>),
     FnApp(Box<Expr>, ArgsApp),
@@ -41,4 +44,4 @@ pub enum Expr {
     Dereference{expr: Box<Expr>, mutable: bool},
     Expansion(Vec<String>),
     FieldAccess(Box<Expr>, String)
-}
+});
