@@ -1,13 +1,12 @@
-use crate::s;
 use crate::e;
+use crate::s;
 
-
-s! (Method {
+s!(Method {
     self_typ: SelfTyp,
     function: super::fndef::FnDef
 });
 
-e! (SelfTyp {
+e!(SelfTyp {
     Owned,
     Ref,
     MutRef,

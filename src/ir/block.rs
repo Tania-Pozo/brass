@@ -1,4 +1,5 @@
 use crate::e;
+use crate::ir::Typ;
 use crate::s;
 
 s! (ArgsDef {args: Vec<(String, super::Typ)>});
@@ -42,6 +43,18 @@ e! (Expr {
     FnApp(Box<Expr>, ArgsApp),
     Reference{expr: Box<Expr>, mutable: bool},
     Dereference{expr: Box<Expr>, mutable: bool},
-    Expansion(Vec<String>),
+    UntypedLiteral(Literal),
+    TypedLiteral(Typ, TypedLit),
     FieldAccess(Box<Expr>, String)
+});
+
+e! ( Literal {
+    Num(String),
+    StringLit(String),
+    Tuple(Vec<Expr>),
+});
+
+e! (TypedLit {
+    Literal(Literal),
+    StructLit(Vec<(String, Expr)>)
 });

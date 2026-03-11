@@ -1,4 +1,3 @@
-
 use crate::s;
 
 s!( Sum {

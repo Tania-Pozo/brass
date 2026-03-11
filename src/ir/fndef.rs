@@ -1,6 +1,6 @@
 use crate::s;
 
-s! (FnDef {
+s!(FnDef {
     name: String,
     args: super::block::ArgsDef,
     block: super::block::Block,
